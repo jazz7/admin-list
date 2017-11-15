@@ -1,105 +1,77 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="bootstrap.min.css">
+	  <link rel="stylesheet" href="bootstrap.min.css">
 	</head>
 	<body>
+	  <div class="container">
+	    <div class="col-3">
+	    </div>
+	    <div class="col-6" align="center">
+	      <p class="h2 text-primary text-center">List of invitees</p>
+	      <table class="table" id="my-table-name">
+  		<thead class='thead-dark'>
+    		  <tr>
+		    <th scope="col">#</th>
+		    <th scope="col">coin id</th>
+		    <th scope="col">First Name</th>
+		    <th scope="col">Last Name</th>
+		    <th scope='col'>status</th>
+ 		  </tr>
+		</thead>
+		<tbody class='table table-strip'>
+		</tbody>
+	      </table>
+	      <button id="ActionAddRow" on>Add Row</button>
+              <button id="ActionSubmit">Submit</button>
+	    </div>
+	    <div class="col-3">
+	    </div>
+	  </div>
+	  <script type="text/javascript">
+		var rows = [{
+		      number:'0',
+		      coinid:'121',
+		      name:'mark',
+		      Last:'caac',
+		      status:'yes'
+		    }, {
+		      number:'0',
+		      coinid:'121',
+		      name:'mark',
+		      Last:'caac',
+		      status:'yes'
+		    }]
 
-		<div class="container">
-			<div class="col-3">
-			</div>
-			<div class="col-6" align="center">
-				<p class="h2 text-primary text-center">List of invitees</p>
-				<table class="table">
-  					<thead class='thead-dark'>
-  						     
-    					<tr>
-					      <th scope="col">#</th>
-					      <th scope="col">coin id</th>
-					      <th scope="col">First Name</th>
-					      <th scope="col">Last Name</th>
-					      <th scope='col'>status</th>
- 					    </tr>
-					</thead>
-					<tbody class='table table-strip'id="hhhh">
+		"use strict";
 
-			
-					    <tr>  
-					      <th scope="row">1</th>
-					      <td>455</td>
-					      <td class='col-lg-8'>Mark</td>
-					      <td>Otto</td>
-					      <td>
-					    </tr>
+                function addRow(table, details) {
+                  var tableRef = document.getElementById(table);
 
-					    <tr>
-					    	<th scope="row">2</th>
-					    	<td>123</td>   
-					      <td>jazz</td>
-					      <td>ar</td>
-					      
-					    </tr>
-					    <script src='script.js' type="text/javascript">
-					    	var row = [
-					    	{ number:'0',
-					    	  coinid:'121',
-					    	  name:'mark',
-					    	  Last:'caac',
-					    	  status:'yes'
-					    	},
-					    	{ 
-					    	  number:'0',
-					    	  coinid:'121',
-					    	  name:'mark',
-					    	  Last:'caac',
-					    	  status:'yes'
-					    	}
+		  var row = tableRef.insertRow(0);
+		  var newCellOne = row.insertCell(0);
+		  var newCellTwo = row.insertCell(1);
+		  var newCellThree = row.insertCell(2);
+		  var newCellFour = row.insertCell(3);
+		  var newCellfive = row.insertCell(4);
 
-					    	 	]
-					    	"use strict";
-                             function addRow(table, details) {
-                              var tableRef = document.getElementById(table);
-							  var row = tableRef.insertRow(0);
-							  var newCellOne = row.insertCell(0);
-							  var newCellTwo = row.insertCell(1);
-							  var newCellThree = row.insertCell(2);
-							  var newCellfour = row.insertCell(3);
-							  var newCellfive = row.insertCell(4);
-							  var number = document.createTextNode(details.number);
-							  var coinid = document.createTextNode(details.coinid);
-							  var name  = document.createTextNode(details.name);
-							  var Last = document.createTextNode(details.Last);
-							  var status = document.createTextNode(details.status);
+		  var number = document.createTextNode(details.number);
+		  var coinid = document.createTextNode(details.coinid);
+		  var name  = document.createTextNode(details.name);
+		  var Last = document.createTextNode(details.Last);
+		  var status = document.createTextNode(details.status);
 
+		  newCellOne.appendChild(number);
+		  newCellTwo.appendChild(coinid);
+		  newCellThree.appendChild(name);
+		  newCellFour.appendChild(Last);
+		  newCellfive.appendChild(status);
+		}
 
-							    newCellOne.appendChild(number);
-							    newCellTwo.appendChild(coinid);
-							    newCellThree.appendChild(name);
-							    newCellfour.appendChild(Last);
-							    newCellfive.appendChild(status);
-							}
+		for (i = 0; i < 6 ; i++) {
+			addRow('my-table-name', rows[i]);
+			addRow('my-table-name', rows[i]);
+	       }
 
-for (i = 0; i < 6 ; i++) {
-   addRow('Table', rows[i]);
-   addRow('Table', rows[i]);
-   addRow('Table', rows[i]);
-   addRow('Table', rows[i]);
-   addRow('Table', rows[i]);
-   addRow('Table', rows[i]);
-}
-
-					    
-						    </script>
-
-					
-					</tbody>
-				</table>
-				<button id="ActionAddRow">Add Row</button>
-                <button id="ActionSubmit">Submit</button>
-			</div>
-			<div class="col-3">
-			</div>
-		</div>
-		<script>
 		</script>
 	</body>
 </html>
