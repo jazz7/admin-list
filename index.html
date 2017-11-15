@@ -39,6 +39,54 @@
 					      
 					    </tr>
 					    <script src='script.js' type="text/javascript">
+					    	var row = [
+					    	{ number:'0',
+					    	  coinid:'121',
+					    	  name:'mark',
+					    	  Last:'caac',
+					    	  status:'yes'
+					    	},
+					    	{ 
+					    	  number:'0',
+					    	  coinid:'121',
+					    	  name:'mark',
+					    	  Last:'caac',
+					    	  status:'yes'
+					    	}
+
+					    	 	]
+					    	"use strict";
+                             function addRow(table, details) {
+                              var tableRef = document.getElementById(table);
+							  var row = tableRef.insertRow(0);
+							  var newCellOne = row.insertCell(0);
+							  var newCellTwo = row.insertCell(1);
+							  var newCellThree = row.insertCell(2);
+							  var newCellfour = row.insertCell(3);
+							  var newCellfive = row.insertCell(4);
+							  var number = document.createTextNode(details.number);
+							  var coinid = document.createTextNode(details.coinid);
+							  var name  = document.createTextNode(details.name);
+							  var Last = document.createTextNode(details.Last);
+							  var status = document.createTextNode(details.status);
+
+
+							    newCellOne.appendChild(number);
+							    newCellTwo.appendChild(coinid);
+							    newCellThree.appendChild(name);
+							    newCellfour.appendChild(Last);
+							    newCellfive.appendChild(status);
+							}
+
+for (i = 0; i < 6 ; i++) {
+   addRow('Table', rows[i]);
+   addRow('Table', rows[i]);
+   addRow('Table', rows[i]);
+   addRow('Table', rows[i]);
+   addRow('Table', rows[i]);
+   addRow('Table', rows[i]);
+}
+
 					    
 						    </script>
 
