@@ -1,12 +1,19 @@
 <html>
 <head>
-    <link rel="" href="bootstrap.min.css", href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css" href="https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css" href="https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css" href="https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> </link>
+    <style type="text/css" media='screen,projection'>
+
+    @import = url("https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css");
+    @import = url("https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css");
+    @import= url("https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css");
+    @import= url("https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css");
+</style>
 </head>
     <body>
         <p class="h2 text-primary text-center">List of invitees</p>
                 <table class="table">
                     <thead class='thead-dark'>
-<table id="table" class="display" cellspacing="0" width="100%">
+<table id="table" class="display" cellspacing="0" width="50%">
         <thead >
             <tr>
                 <th>sn</th>
@@ -40,7 +47,7 @@
                         label: "status:",
                         name: "status"
                       ]
-            } );
+            });
 
             ('table').DataTable( {
                 columns: [
