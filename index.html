@@ -2,13 +2,21 @@
 	<head>
 	  <link rel="stylesheet" href="bootstrap.min.css">
 	</head>
+	<style>
+	body{background-image: url(http://1.bp.blogspot.com/-v06K9bIAaAQ/U2cyXG4H4GI/AAAAAAAAJPw/RXp9YPpVON8/s0/razer-logo-red-hd-1920x1080.jpg);
+		background-size: 1200px 720px;
+		background-position: 'center';
+		background-attachment: 'fixed';
+        background-repeat: 'no-repeat';
+	 }
+	</style>
 	<body>
 	  <div class="container">
 	    <div class="col-3">
 	    </div>
 	    <div class="col-6" align="center">
 	      <p class="h2 text-primary text-center">List of invitees</p>
-	      <table class="table" id="my-table-name">
+	      <table class="table"> 
   		<thead class='thead-dark'>
     		  <tr>
 		    <th scope="col">#</th>
@@ -18,16 +26,31 @@
 		    <th scope='col'>status</th>
  		  </tr>
 		</thead>
-		<tbody class='table table-strip'>
+		<tbody class='table table-strip' id="my-table-name">
 		</tbody>
 	      </table>
-	      <button id="ActionAddRow" on>Add Row</button>
-              <button id="ActionSubmit">Submit</button>
+	      <button onclick="newRow()" >Add Row</button>
+	      <button onclick="deleteRow()">DELETE Row</button>
 	    </div>
 	    <div class="col-3">
 	    </div>
 	  </div>
 	  <script type="text/javascript">
+	  	function newRow() {
+	  		var table =
+	  		document.getElementById("my-table-name");
+	  		var row = table.insertRow(5);
+	 	  var newCellOne = row.insertCell(0);
+		  var newCellTwo = row.insertCell(1);
+		  var newCellThree = row.insertCell(2);
+		  var newCellFour = row.insertCell(3);
+		  var newCellfive = row.insertCell(4);
+		     }
+		     function deleteRow(){
+		     	document.getElementById("my-table-name").deleteRow(5);
+		     }
+		    
+
 		var rows = [{
 		      number:'0',
 		      coinid:'121',
