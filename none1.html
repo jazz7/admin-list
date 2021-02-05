@@ -1,0 +1,73 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css"> </link>
+    <style type="text/css" media='screen,projection'>
+
+    @import = url("https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css");
+    @import = url("https://cdn.datatables.net/buttons/1.4.2/css/buttons.dataTables.min.css");
+    @import= url("https://cdn.datatables.net/select/1.2.3/css/select.dataTables.min.css");
+    @import= url("https://editor.datatables.net/extensions/Editor/css/editor.dataTables.min.css");
+</style>
+</head>
+    <body>
+        <p class="h2 text-primary text-center">List of invitees</p>
+                <table class="table">
+                    <thead class='thead-dark'>
+<table id="table" class="display" cellspacing="0" width="50%">
+        <thead >
+            <tr>
+                <th>sn</th>
+                <th>first_name</th>
+                <th>last_name</th>
+                <th>coinid</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <script type="text/javascript">
+        var editor;
+
+        (document).ready(function() {
+        "use strict";
+          editor = new fn.dataTable.Editor( {
+                table: "table",
+                fields: [
+                    {
+                        label: "sn:",
+                        name: "sn"
+                    }, {
+                        label: "first_name:",
+                        name: "first_name"
+                    }, {
+                        label: "last_name:",
+                        name: "last_name"
+                    }, {
+                        label: "coinid:",
+                        name: "coinid"
+                    }, {
+                        label: "status:",
+                        name: "status"
+                      ]
+            });
+
+            ('table').DataTable( {
+                columns: [
+                    { data: null, render: function ( data, type, row ) {
+                        return data.first_name+' '+data.last_name;
+                    } },
+                    { data: "sn" },
+                    { data: "coinid" },
+                    { data: "status" },
+                      render: .fn.dataTable.render.number( ',', '.', 0 ) }
+                ],
+                buttons: [
+                    { extend: "create", editor: editor },
+                    { extend: "edit",   editor: editor },
+                    { extend: "remove", editor: editor }
+                ]
+            } );
+        } );
+
+        </script>
+    </table>
+    </body>
+    </html>

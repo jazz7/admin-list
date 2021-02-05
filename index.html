@@ -1,57 +1,100 @@
 <html>
 	<head>
-		<link rel="stylesheet" href="bootstrap.min.css">
+	  <link rel="stylesheet" href="bootstrap.min.css">
 	</head>
+	<style>
+	body{background-image: url(http://1.bp.blogspot.com/-v06K9bIAaAQ/U2cyXG4H4GI/AAAAAAAAJPw/RXp9YPpVON8/s0/razer-logo-red-hd-1920x1080.jpg);
+		background-size: 1200px 720px;
+		background-position: 'center';
+		background-attachment: 'fixed';
+        background-repeat: 'no-repeat';
+	 }
+	</style>
 	<body>
+	  <div class="container">
+	    <div class="col-3">
+	    </div>
+	    <div class="col-6" align="center">
+	      <p class="h2 text-primary text-center">List of invitees</p>
+	      <table class="table"> 
+  		<thead class='thead-dark'>
+    		  <tr>
+		    <th scope="col">#</th>
+		    <th scope="col">coin id</th>
+		    <th scope="col">First Name</th>
+		    <th scope="col">Last Name</th>
+		    <th scope='col'>status</th>
+ 		  </tr>
+		</thead>
+		<tbody class='table table-strip' id="my-table-name">
+		</tbody>
+	      </table>
+	      <button onclick="newRow()" >Add Row</button>
+	      <button onclick="deleteRow()">DELETE Row</button>
+	    </div>
+	    <div class="col-3">
+	    </div>
+	  </div>
+	  <script type="text/javascript">
+	  	function newRow() {
+	  		var table =
+	  		document.getElementById("my-table-name");
+	  		var row = table.insertRow(5);
+	 	  var newCellOne = row.insertCell(0);
+		  var newCellTwo = row.insertCell(1);
+		  var newCellThree = row.insertCell(2);
+		  var newCellFour = row.insertCell(3);
+		  var newCellfive = row.insertCell(4);
+		     }
+		     function deleteRow(){
+		     	document.getElementById("my-table-name").deleteRow(5);
+		     }
+		    
 
-		<div class="container">
-			<div class="col-3">
-			</div>
-			<div class="col-6" align="center">
-				<p class="h2 text-primary text-center">List of invitees</p>
-				<table class="table">
-  					<thead class='thead-dark'>
-  						     
-    					<tr>
-					      <th scope="col">#</th>
-					      <th scope="col">coin id</th>
-					      <th scope="col">First Name</th>
-					      <th scope="col">Last Name</th>
-					      <th scope='col'>status</th>
- 					    </tr>
-					</thead>
-					<tbody class='table table-strip'id="hhhh">
+		var rows = [{
+		      number:'0',
+		      coinid:'121',
+		      name:'mark',
+		      Last:'caac',
+		      status:'yes'
+		    }, {
+		      number:'0',
+		      coinid:'121',
+		      name:'mark',
+		      Last:'caac',
+		      status:'yes'
+		    }]
 
-			
-					    <tr>  
-					      <th scope="row">1</th>
-					      <td>455</td>
-					      <td class='col-lg-8'>Mark</td>
-					      <td>Otto</td>
-					      <td>
-					    </tr>
+		"use strict";
 
-					    <tr>
-					    	<th scope="row">2</th>
-					    	<td>123</td>   
-					      <td>jazz</td>
-					      <td>ar</td>
-					      
-					    </tr>
-					    <script src='script.js' type="text/javascript">
-					    
-						    </script>
+                function addRow(table, details) {
+                  var tableRef = document.getElementById(table);
 
-					
-					</tbody>
-				</table>
-				<button id="ActionAddRow">Add Row</button>
-                <button id="ActionSubmit">Submit</button>
-			</div>
-			<div class="col-3">
-			</div>
-		</div>
-		<script>
+		  var row = tableRef.insertRow(0);
+		  var newCellOne = row.insertCell(0);
+		  var newCellTwo = row.insertCell(1);
+		  var newCellThree = row.insertCell(2);
+		  var newCellFour = row.insertCell(3);
+		  var newCellfive = row.insertCell(4);
+
+		  var number = document.createTextNode(details.number);
+		  var coinid = document.createTextNode(details.coinid);
+		  var name  = document.createTextNode(details.name);
+		  var Last = document.createTextNode(details.Last);
+		  var status = document.createTextNode(details.status);
+
+		  newCellOne.appendChild(number);
+		  newCellTwo.appendChild(coinid);
+		  newCellThree.appendChild(name);
+		  newCellFour.appendChild(Last);
+		  newCellfive.appendChild(status);
+		}
+
+		for (i = 0; i < 6 ; i++) {
+			addRow('my-table-name', rows[i]);
+			addRow('my-table-name', rows[i]);
+	       }
+
 		</script>
 	</body>
 </html>
